@@ -1,8 +1,10 @@
 ﻿namespace DungeonLibary
 {
-  
-        public class Combat
-        {
+
+    public class Combat
+    {
+       
+
             //This is NOT a datatype class, so it will not have fields, 
             //properties, or constructors. It will simply serve as a 
             //"warehouse" for a variety of methods related to combat.
@@ -71,6 +73,7 @@
                     DoAttack(monster, player);
                 }
             }
-        }
+        
+    }
     
 }

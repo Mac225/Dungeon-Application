@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace DungeonLibary
 {
+
     public abstract class Character
     {
+        
+            
+        
+
         //FIELDS
         private int _life;
         private string _name;
@@ -55,10 +60,11 @@ namespace DungeonLibary
                 }
             }
         }
+    
 
 
-        //CONSTRUCTORS
-        public Character(string name, int hitChance, int block, int maxLife, int life)
+    //CONSTRUCTORS
+    public Character(string name, int hitChance, int block, int maxLife, int life)
         {
             Name = name;
             HitChance = hitChance;
@@ -101,5 +107,7 @@ namespace DungeonLibary
         {
             return 0;
         }
+    
+
     }
 }
