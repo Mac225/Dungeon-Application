@@ -6,6 +6,7 @@
     <RootNamespace>Dungeon_App</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <StartupObject>Dungeon_App.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
