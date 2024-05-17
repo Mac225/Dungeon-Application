@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DungeonLibary
 {
-    public class Vampire : Monster
+    public class Wasp : Monster
     {
         public DateTime HourChangeBack { get; set; }
 
-        public Vampire(string name, int life, int maxLife, int hitChance, int block, int minDamage,
+        public Wasp(string name, int life, int maxLife, int hitChance, int block, int minDamage,
             int maxDamage, string description)
             : base(name, life, maxLife, hitChance, block, maxDamage, minDamage, description)
         {
@@ -31,7 +31,7 @@ namespace DungeonLibary
             return string.Format("{0}\n{1}",
                 base.ToString(),
                 HourChangeBack.Hour < 6 || HourChangeBack.Hour > 18 ?
-                "Empowered by the night" : "Weakened by the daylight");
+                "Stronger by hive" : "Weak from hunger");
         }
     }
 }

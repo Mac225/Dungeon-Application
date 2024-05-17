@@ -19,9 +19,9 @@ namespace Dungeon_App
 
             #region Title / Introduction
 
-            Console.Title = "DUNGEON OF DOOM!";
+            Console.Title = "DUNGEON OF Death!";
 
-            Console.WriteLine("Your journey begins...\n");
+            Console.WriteLine("Your journey starts\n");
 
             #endregion
 
@@ -86,15 +86,15 @@ namespace Dungeon_App
                 #region Monsters - Block 5
 
                 //Create a variety of Monsters
-                Rabbit rabbit = new Rabbit("White Rabbit", 25, 25, 50, 20,
-                  2, 8, "That's no ordinary rabbit! Look at the bones!",
+                Dog dog = new Dog("Doggy", 25, 25, 50, 20,
+                  2, 8, "That's not a small dog! Look at its long teeth!",
                   true);
-                Vampire vampire = new Vampire("Dracula", 25, 30, 70, 8, 1, 8, "The father of all the undead");
-                Turtle turtle = new Turtle("Mikey", 17, 25, 50, 10, 1, 4, "He is no longer a teenager but he is still /a/ mutant turle", 3, 10);
-                Dragon dragon = new Dragon("Smaug", 10, 20, 65, 20, 1, 15, "The last great dragon.", true);
+                Wasp wasp = new Wasp("BuzzKill", 25, 30, 70, 8, 1, 8, "Extra stingy");
+                Ferret ferret = new Ferret("Bear", 17, 25, 50, 10, 1, 4, "A large fat ferret", 3, 10);
+                Rat rat = new Rat("Sneaky", 10, 20, 65, 20, 1, 15, "The fattest rat.", true);
 
                 //Add the monsters to a collection
-                Monster[] monsters = { rabbit, turtle, vampire, dragon };
+                Monster[] monsters = { dog, wasp, ferret, rat };
 
                 //Pick one at random to place in the room
                 Random rand = new Random();

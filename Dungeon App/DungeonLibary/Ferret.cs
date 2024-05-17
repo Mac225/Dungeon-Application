@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DungeonLibary
 {
-    public class Turtle : Monster
+    public class Ferret : Monster
     {
         public int BonusBlock { get; set; }
         public int HidePercent { get; set; }
 
-        public Turtle(string name, int life, int maxLife, int hitChance, int block, int minDamage,
+        public Ferret(string name, int life, int maxLife, int hitChance, int block, int minDamage,
             int maxDamage, string description, int bonusBlock, int hidePercent)
             : base(name, life, maxLife, hitChance, block, maxDamage, minDamage, description)
         {

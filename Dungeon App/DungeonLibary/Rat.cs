@@ -6,28 +6,28 @@ using System.Threading.Tasks;
 
 namespace DungeonLibary
 {
-    public class Rabbit : Monster
+    public class Rat : Monster
     {
-        public bool IsFluffy { get; set; }
+        public bool IsScaly { get; set; }
 
-        public Rabbit(string name, int life, int maxLife, int hitChance, int block, int minDamage,
-            int maxDamage, string description, bool isFluffy)
+
+        public Rat(string name, int life, int maxLife, int hitChance, int block, int minDamage,
+            int maxDamage, string description, bool isScaly)
             : base(name, life, maxLife, hitChance, block, maxDamage, minDamage, description)
         {
-            IsFluffy = isFluffy;
+            IsScaly = isScaly;
         }
 
         public override string ToString()
         {
-            return base.ToString() + (IsFluffy ? "Fluffy" : "Not so fluffy");
+            return base.ToString() + (IsScaly ? "Fuzzy" : "Is soft");
         }
 
         public override int CalcBlock()
         {
             int calculatedBlock = Block;
 
-            //Apply a 50% increase to the Rabbit's block if it's fluffy
-            if (IsFluffy)
+            if (IsScaly)
             {
                 calculatedBlock += calculatedBlock / 2;
             }
