@@ -12,10 +12,6 @@ namespace DungeonLibary
         Human,
         Elf,
         Halfling,
-        Gnome,
-        Tabaxi,
-        Dwarf,
-        Dragonborn,
-        Tiefling
+       
     }
 }

@@ -8,7 +8,7 @@ namespace DungeonLibary
 {
     public class Weapon
     {
-        //FIELDS
+       
         private int _minDamage;
         private int _maxDamage;
         private string _name;
@@ -16,7 +16,7 @@ namespace DungeonLibary
         private bool _isTwoHanded;
         private WeaponType _type;
 
-        //PROPERTIES
+        
         public int MaxDamage
         {
             get { return _maxDamage; }
@@ -42,7 +42,7 @@ namespace DungeonLibary
             get { return _minDamage; }
             set
             {
-                //MinDamage shouldn't exceed MaxDamage & shouldn't be less than 1
+                
                 if (value > 0 && value <= MaxDamage)
                 {
                     _minDamage = value;
@@ -61,14 +61,10 @@ namespace DungeonLibary
             set { _type = value; }
         }
 
-        //CONSTRUCTORS
         public Weapon(int minDamage, int maxDamage, string name, int bonusHitChance,
             bool isTwohanded, WeaponType type)
         {
-            //ANY properties with business rules based off of OTHER properties
-            //MUST come AFTER those other properties are set. In this case, our 
-            //MinDamage has business rules that reference MaxDamage, so we 
-            //MUST set MaxDamage FIRST.
+           
             MaxDamage = maxDamage;
             MinDamage = minDamage;
             Name = name;

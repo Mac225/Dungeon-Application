@@ -3,12 +3,9 @@ using System.Numerics;
 using System.Threading;
 using System;
 
-
-#region using statement - Block 5
-
 using DungeonLibary;
 
-#endregion
+
 namespace Dungeon_App
 {
     class Program
@@ -17,107 +14,86 @@ namespace Dungeon_App
         {
            
 
-            #region Title / Introduction
-
             Console.Title = "DUNGEON OF Death!";
 
-            Console.WriteLine("Your journey starts\n");
-
-            #endregion
-
-            #region Possible Expansion - Levels of Play
-
-            //Possible Expansion: 
-            //Define levels of play
-            //int[] levels = { 5, 12, 20, 30, 45 };//Use with experience property in Character
-            //inherited down to Player and Monster, to scale levelling.
-
-            #endregion
-
-            //TODO Variable to Keep score
-
-            #region Variable to Track Score - Block 5
+            Console.WriteLine("The fight begins!\n");
 
             int score = 0;
 
-            #endregion
 
             //TODO Weapon Object Creation
 
-            #region Weapon - Block 5
 
-            Weapon sword = new Weapon(1, 8, "Long Sword", 10, false, WeaponType.Sword);
+            Weapon Knife = new Weapon(1, 11, "Sharp Knife", 12, false, WeaponType.Knife);
+            Weapon Bat = new Weapon(1, 5, "Wooden Bat", 15, false, WeaponType.Bat);
+            Weapon Staff = new Weapon(1, 10, "Short Staff", 11, false, WeaponType.Staff);
+            Weapon Sword = new Weapon(1, 8, "Long Sword", 10, false, WeaponType.Sword);
 
-            #endregion
 
-            #region Possible Expansion - Name Customization
+            //Define name
+            Console.Write("Enter your name: ");
 
-            //Possible Expansion: 
-            //Allow player to define chatacter name
-            //Console.Write("Enter your name: ");
-            //string userName = Console.ReadLine();
-            //Console.Clear();
-            //Console.WriteLine("Welcome, {0}! Your journey begins...", userName);
-            //Console.ReadKey();
-            //Console.Clear();
+            string userName = Console.ReadLine();
 
-            #endregion
+            Console.Clear();
 
-            //TODO Player Object Creation
+            Console.WriteLine("Welcome, {0}! Your journey begins...", userName);
 
-            #region Player Object Creation - Block 5
+            Console.Clear();
 
-            Player player = new Player("Leeroy Jenkins", 70, 5, 40, 40, Race.Human, sword);
+            //Customize character
 
-            #endregion
 
-            #region Main Game Loop
 
-            //TODO Create the main game loop
+            Console.Write("\nPlease choose an action:\n" +
+                        "O) Orc\n" +
+                        "H) Human\n" +
+                        "E) Elf\n" +
+                        "P) Halfling\n");
+                        
+
+            ConsoleKey userChoice1 = Console.ReadKey(true).Key;
+
+            Console.Clear();
+
+            //bool exit2 = false;
+
+            
+            
+
+            Console.Clear();
+
+
+
+            Player player = new Player(userName, 70, 5, 40, 40, Race.Human, Sword);
+
+          
             bool exit = false;
 
             do
             {
-
-                //TODO Generate a random room
                 Console.WriteLine(GetRoom());
 
-                //TODO Select a random monster to inhabit the room
-                #region Monsters - Block 5
 
-                //Create a variety of Monsters
                 Dog dog = new Dog("Doggy", 25, 25, 50, 20,
                   2, 8, "That's not a small dog! Look at its long teeth!",
                   true);
                 Wasp wasp = new Wasp("BuzzKill", 25, 30, 70, 8, 1, 8, "Extra stingy");
                 Ferret ferret = new Ferret("Bear", 17, 25, 50, 10, 1, 4, "A large fat ferret", 3, 10);
                 Rat rat = new Rat("Sneaky", 10, 20, 65, 20, 1, 15, "The fattest rat.", true);
-
-                //Add the monsters to a collection
                 Monster[] monsters = { dog, wasp, ferret, rat };
 
-                //Pick one at random to place in the room
                 Random rand = new Random();
                 int randomNbr = rand.Next(monsters.Length);
                 Monster monster = monsters[randomNbr];
 
-                //Output
                 Console.WriteLine("\nIn this room: " + monster.Name);
 
-                #endregion
-
-                //TODO Create the loop for the main gameplay menu
-
-                #region Gameplay Menu Loop
 
                 bool reload = false;
                 do
                 {
 
-                    //TODO Create the main gameplay menu
-                    #region MENU
-
-                    //Prompt the user
                     Console.Write("\nPlease choose an action:\n" +
                         "A) Attack\n" +
                         "R) Run away\n" +
@@ -125,190 +101,107 @@ namespace Dungeon_App
                         "M) Monster Info\n" +
                         "X) Exit\n");
 
-                    //Capture user's menu selection
-                    ConsoleKey userChoice = Console.ReadKey(true).Key;//Executes upon input without hitting enter
+                  
+                    ConsoleKey userChoice = Console.ReadKey(true).Key;
 
-                    //Clear the console
                     Console.Clear();
 
-                    //Use branching logic to act upon user's menu selection
+                   
                     switch (userChoice)
                     {
                         case ConsoleKey.A:
 
-                            //TODO Combat
+                            
 
-                            #region Possible Expansion - Racial/Weapon Bonus
-
-                            //Possible Expansion: Give certain character races or characters with a certain weapon an advantage
-                            //if (player.CharacterRace == Race.DarkElf)
-                            //{
-                            //    Combat.DoAttack(player, monster);
-                            //}
-
-                            #endregion
-
-                            #region Combat - Block 5
-
-                            //Execute combat
+                            
                             Combat.DoBattle(player, monster);
 
-                            //Check if the monster is dead
                             if (monster.Life <= 0)
                             {
-                                #region Possible Expansion - Combat Rewards
-
-                                //You could add some logic here to grant the Player life:
-                                //player.Life += 5;
-
-                                //Or, loot drops! (NOTE: This would require an Item class 
-                                //as well as a property for the Player of type List<Item>):
-
-                                //Item rubyNecklace = new Item("Ruby Necklace", "Increases Max Life", MaxLife, 10);
-                                //inventory.add(rubyNecklace);
-                                //Console.WriteLine($"{player.Name} received {rubyNecklace.Name}!");
-                                //Console.WriteLine("{0}", rubyNecklace);
-
-                                #endregion
-
-                                //Use green text to highlight winning combat
+                              
                                 Console.ForegroundColor = ConsoleColor.Green;
-
-                                //Output the result
                                 Console.WriteLine("\nYou killed {0}!\n",
                                     monster.Name);
-
-                                //Reset the color
                                 Console.ResetColor();
-
-                                //Flip the reload bool to exit the current menu loop and get a new room
                                 reload = true;
-
-                                //Update the score
                                 score++;
 
                             }
 
-                            #endregion
 
                             break;
 
                         case ConsoleKey.R:
 
-                            //TODO Run Away
-
-                            #region Run Away - Block 5
 
                             Console.WriteLine("Run Away!!!");
-
-                            //Monster gets an "attack of opportunity"
                             Console.WriteLine($"{monster.Name} attacks you as you flee!");
                             Combat.DoAttack(monster, player);
-
-                            //Formatting
                             Console.WriteLine();
-
-                            //Flip the reload bool to exit the current menu loop and get a new room
                             reload = true;
-
-                            #endregion
 
                             break;
 
                         case ConsoleKey.P:
 
-                            //TODO Player Info
-
-                            #region Player Info - Block 5
 
                             Console.WriteLine("Player Info");
                             Console.WriteLine(player);
 
 
-                            //Console.WriteLine("Monsters defeated: " + score);
-
-                            #endregion
-
                             break;
 
                         case ConsoleKey.M:
 
-                            //TODO Monster Info
-
-                            #region Monster Info - Block 5
 
                             Console.WriteLine(monster);
-
-                            #endregion
 
                             break;
 
                         case ConsoleKey.X:
                         case ConsoleKey.E:
 
-                            //TODO Exit
-
-                            #region Exit
-
-                            Console.WriteLine("No one likes a quitter...");
+                          
+                            Console.WriteLine("You ran away...");
                             exit = true;
 
-                            #endregion
 
                             break;
 
                         default:
 
-                            //TODO Default / Invalid Input
 
-                            #region Default / Invalid Input
+                            Console.WriteLine("Thou hast chosen an wrong option. try agian.");
 
-                            Console.WriteLine("Thou hast chosen an improper option. Triest thou again.");
-
-                            #endregion
 
                             break;
 
-                    }//end switch
-
-                    #endregion
-
-                    //TODO Check Player Life
-                    #region Check Player Life - Block 4
+                    }
 
                     if (player.Life <= 0)
                     {
-                        Console.WriteLine("Dude.... you died!\a");
+                        Console.WriteLine("You died!\a");
 
-                        //If the player is dead, flip the exit bool to end the game
                         exit = true;
                     }
 
-                    #endregion
 
                 } while (!exit && !reload);
 
-                #endregion
 
-            } while (!exit); //while exit is NOT TRUE keep looping
-
-            #endregion
+            } while (!exit); 
 
 
-            //TODO Output Final Score
-            #region Output Final Score - Block 5
 
 
             Console.WriteLine("You defeated " + score + " monster" + ((score == 1) ? "." : "s."));
 
 
-            #endregion
+          
 
 
-        }//end Main
+        }
 
-
-        #region GetRoom()
 
         private static string GetRoom()
         {
@@ -333,15 +226,9 @@ namespace Dungeon_App
 
             return room;
 
-            #region An Example of Possible Refactoring
 
-            //return rooms[new Random().Next(rooms.Length)];
+        }
 
-            #endregion
 
-        }//end GetRoom()
-
-        #endregion
-
-    }//end class
+    }
 }

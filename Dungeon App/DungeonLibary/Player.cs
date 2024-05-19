@@ -17,16 +17,7 @@ namespace DungeonLibary
             CharacterRace = characterRace;
             EquippedWeapon = equippedWeapon;
 
-            #region Potential Expansion - Racial Bonuses
-
-            //switch (CharacterRace)
-            //{
-            //    case Race.Elf:
-            //        HitChance += 5;
-            //        break;
-            //}
-
-            #endregion
+          
         }
 
         public override string ToString()
@@ -37,25 +28,21 @@ namespace DungeonLibary
             {
                 case Race.Orc:
                     description = "Orc";
+                    HitChance += 5;
                     break;
                 case Race.Human:
                     description = "Human";
+                    HitChance += 6;
                     break;
                 case Race.Elf:
                     description = "Elf";
+                    HitChance += 2;
                     break;
                 case Race.Halfling:
                     description = "Halfling";
+                    HitChance += 7;
                     break;
-                case Race.Gnome:
-                    description = "Gnome";
-                    break;
-                case Race.Dwarf:
-                    description = "Dwarf";
-                    break;
-                case Race.Dragonborn:
-                    description = "DragonBorn";
-                    break;
+                
             }
 
             return string.Format("-=-= {0} =-=-\n" +
@@ -72,14 +59,10 @@ namespace DungeonLibary
 
         public override int CalcDamage()
         {
-            //create a random object
+           
             Random rand = new Random();
-
-            //determine damage
             int damage = rand.Next(EquippedWeapon.MinDamage,
                 EquippedWeapon.MaxDamage + 1);
-
-            //return damage
             return damage;
         }
 

@@ -10,8 +10,7 @@ namespace DungeonLibary
     {
         Sword,
         Knife,
-        Projectile,
-        Magical,
-        Ice
+        Staff,
+        Bat
     }
 }
