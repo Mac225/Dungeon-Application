@@ -44,16 +44,41 @@ namespace Dungeon_App
 
 
             Console.Write("Please choose a Charcter: orc, human, elf, halfling :\n");
-            Console.ReadLine();
-
+            string answer2 = Console.ReadLine();
             Console.Clear();
-           
-            
-            
+
+           // switch (answer2)
+          //  {
+             //   case x:
+             //       // code block
+             //       break;
+            //    case y:
+             //       // code block
+            //        break;
+            //    default:
+            //        // code block
+             //       break;
+            //}
 
 
+            Console.Write("Please choose a Weapon: knife, bat, staff, sword :\n");
+            string answer3 = Console.ReadLine();
+            Console.Clear();
 
-           Player player = new Player(userName, 70, 5, 40, 40, Race.Orc, Knife);
+           // switch (answer3)
+            //{
+             //   case x:
+                    // code block
+              //      break;
+               // case y:
+               //     // code block
+                //    break;
+               // default:
+               //     // code block
+            //        break;
+          //  }
+
+            Player player = new Player(userName, 70, 5, 40, 40, Race.Orc, Knife);
 
            
 
