@@ -43,42 +43,14 @@ namespace Dungeon_App
 
 
 
-            Console.Write("Please choose a Charcter: orc, human, elf, halfling :\n");
-            string answer2 = Console.ReadLine();
-            Console.Clear();
-
-           // switch (answer2)
-          //  {
-             //   case x:
-             //       // code block
-             //       break;
-            //    case y:
-             //       // code block
-            //        break;
-            //    default:
-            //        // code block
-             //       break;
-            //}
+            
 
 
-            Console.Write("Please choose a Weapon: knife, bat, staff, sword :\n");
-            string answer3 = Console.ReadLine();
-            Console.Clear();
 
-           // switch (answer3)
-            //{
-             //   case x:
-                    // code block
-              //      break;
-               // case y:
-               //     // code block
-                //    break;
-               // default:
-               //     // code block
-            //        break;
-          //  }
+           
+         
 
-            Player player = new Player(userName, 70, 5, 40, 40, Race.Orc, Knife);
+            Player player = new Player(userName, 70, 5, 40, 40, Race.Human, Knife);
 
            
 
@@ -114,6 +86,8 @@ namespace Dungeon_App
                         "R) Run away\n" +
                         "P) Player Info\n" +
                         "M) Monster Info\n" +
+                        "C) Change Weapon\n"+
+                        "H) Change Race\n" +
                         "X) Exit\n");
 
                   
@@ -121,16 +95,16 @@ namespace Dungeon_App
 
                     Console.Clear();
 
-                   
+
                     switch (userChoice)
                     {
                         case ConsoleKey.A:
-                            
+
                             Combat.DoBattle(player, monster);
 
                             if (monster.Life <= 0)
                             {
-                              
+
                                 Console.ForegroundColor = ConsoleColor.Green;
                                 Console.WriteLine("\nYou killed {0}!\n",
                                     monster.Name);
@@ -153,12 +127,76 @@ namespace Dungeon_App
                             reload = true;
 
                             break;
+                        case ConsoleKey.C:
+
+                            Console.Write("Please choose a Weapon: knife, bat, staff, sword :\n");
+                            string answer3 = Console.ReadLine();
+                            
+                            reload = true;
+                             
+                            switch (answer3)
+                            {
+                                case "knife":
+                                    
+                                  
+                                    new Player(userName, 70, 5, 40, 40, Race.Orc, Knife);
+                                    break;
+
+                                case "staff":
+                                    
+                                   
+                                    new Player(userName, 70, 5, 40, 40, Race.Orc, Staff);
+                                    break;
+                                case "bat":
+
+                                    
+                                    new Player(userName, 70, 5, 40, 40, Race.Orc, Bat);
+                                    break;
+                                case "sword":
+                                   
+                                    new Player(userName, 70, 5, 40, 40, Race.Orc, Sword);
+                                    break;
+
+                                 default : Console.WriteLine("try agian");
+
+                                    break;
+
+                            }
+                            break;
+                        case ConsoleKey.H:
+                           
+                            Console.Write("Please choose a Charcter: orc, human, elf, halfling :\n");
+                            string answer2 = Console.ReadLine();
+                            switch (answer2)
+                            {
+                                case "orc":
+                                    
+                                    new Player(userName, 70, 5, 40, 40, Race.Orc, Sword);
+                                    break;
+                                case "human":
+                                    new Player(userName, 70, 5, 40, 40, Race.Human, Sword);
+
+                                    break;
+                                case "elf":
+                                    new Player(userName, 70, 5, 40, 40, Race.Elf, Sword);
+
+                                    break;
+                                case "halfling":
+                                    new Player(userName, 70, 5, 40, 40, Race.Halfling, Sword);
+                                    break;
+                                 default : Console.WriteLine("try agian");
+
+                                    break;
+
+                            }
+                            break;
 
                         case ConsoleKey.P:
 
 
                             Console.WriteLine("Player Info");
                             Console.WriteLine(player);
+                            
 
 
                             break;
