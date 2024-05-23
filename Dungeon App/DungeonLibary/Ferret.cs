@@ -28,19 +28,14 @@ namespace DungeonLibary
         public override int CalcBlock()
         {
             int calculatedBlock = Block;
-
-            //Generate a random number from 0-100
             Random rand = new Random();
             int percent = rand.Next(101);
 
-            //Check if that's less than or equal to the hide percent
             if (percent <= HidePercent)
             {
-                //If it is, add the bonus block
                 calculatedBlock += BonusBlock;
             }
 
-            //Return the total
             return calculatedBlock;
         }
     }

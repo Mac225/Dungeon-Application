@@ -48,14 +48,10 @@ namespace DungeonLibary
             {
                 if (value <= MaxLife)
                 {
-                    //If trying to set a life value less than or equal
-                    //to max life, that's fine.
                     _life = value;
                 }
                 else
                 {
-                    //Otherwise, if trying to set life higher than 
-                    //max life, set it to their max life value instead.
                     _life = MaxLife;
                 }
             }
@@ -85,13 +81,6 @@ namespace DungeonLibary
                 HitChance,
                 Block);
         }
-
-        //Because we intend to use Character as a base class for
-        //other, more specific classes (Player & Monster), we want 
-        //those classes to have their own versions of the below
-        //methods. We can override these methods in those classes 
-        //(just like we do with the ToString()), but only if we
-        //add the "virtual" modifier to the method signature.
 
         public virtual int CalcBlock()
         {

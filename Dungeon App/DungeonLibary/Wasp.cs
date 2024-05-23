@@ -16,7 +16,6 @@ namespace DungeonLibary
         {
             HourChangeBack = DateTime.Now;
 
-            //At night, our Vampire becomes significantly more dangerous
             if (HourChangeBack.Hour < 6 || HourChangeBack.Hour > 18)
             {
                 HitChance += 10;

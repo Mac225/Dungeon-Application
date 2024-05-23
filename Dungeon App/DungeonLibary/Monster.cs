@@ -18,7 +18,6 @@ namespace DungeonLibary
             get { return _minDamage; }
             set
             {
-                //MinDamage can't exceed MaxDamage & can't be less than 1
                 if (value > 0 && value <= MaxDamage)
                 {
                     _minDamage = value;

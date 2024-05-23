@@ -4,6 +4,7 @@ using System.Threading;
 using System;
 
 using DungeonLibary;
+using System.Linq.Expressions;
 
 
 namespace Dungeon_App
@@ -21,53 +22,42 @@ namespace Dungeon_App
             int score = 0;
 
 
-            //TODO Weapon Object Creation
-
-
             Weapon Knife = new Weapon(1, 11, "Sharp Knife", 12, false, WeaponType.Knife);
             Weapon Bat = new Weapon(1, 5, "Wooden Bat", 15, false, WeaponType.Bat);
             Weapon Staff = new Weapon(1, 10, "Short Staff", 11, false, WeaponType.Staff);
             Weapon Sword = new Weapon(1, 8, "Long Sword", 10, false, WeaponType.Sword);
 
 
-            //Define name
             Console.Write("Enter your name: ");
 
             string userName = Console.ReadLine();
+
+           
 
             Console.Clear();
 
             Console.WriteLine("Welcome, {0}! Your journey begins...", userName);
 
+            Console.ReadLine();
             Console.Clear();
 
-            //Customize character
 
 
-
-            Console.Write("\nPlease choose an action:\n" +
-                        "O) Orc\n" +
-                        "H) Human\n" +
-                        "E) Elf\n" +
-                        "P) Halfling\n");
-                        
-
-            ConsoleKey userChoice1 = Console.ReadKey(true).Key;
+            Console.Write("Please choose a Charcter: orc, human, elf, halfling :\n");
+            Console.ReadLine();
 
             Console.Clear();
-
-            //bool exit2 = false;
-
+           
             
             
 
-            Console.Clear();
 
 
+           Player player = new Player(userName, 70, 5, 40, 40, Race.Orc, Knife);
 
-            Player player = new Player(userName, 70, 5, 40, 40, Race.Human, Sword);
+           
 
-          
+
             bool exit = false;
 
             do
@@ -110,9 +100,6 @@ namespace Dungeon_App
                     switch (userChoice)
                     {
                         case ConsoleKey.A:
-
-                            
-
                             
                             Combat.DoBattle(player, monster);
 
@@ -172,8 +159,6 @@ namespace Dungeon_App
 
 
                             Console.WriteLine("Thou hast chosen an wrong option. try agian.");
-
-
                             break;
 
                     }
@@ -197,12 +182,8 @@ namespace Dungeon_App
             Console.WriteLine("You defeated " + score + " monster" + ((score == 1) ? "." : "s."));
 
 
-          
-
-
         }
-
-
+          
         private static string GetRoom()
         {
             string[] rooms =

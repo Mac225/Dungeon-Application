@@ -22,7 +22,7 @@ namespace DungeonLibary
 
         public override string ToString()
         {
-            string description = "";
+            string description = "Race";
 
             switch (CharacterRace)
             {

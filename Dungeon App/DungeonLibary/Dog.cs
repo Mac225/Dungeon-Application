@@ -26,7 +26,7 @@ namespace DungeonLibary
         {
             int calculatedBlock = Block;
 
-            //Apply a 50% increase to the Rabbit's block if it's fluffy
+           
             if (isFat)
             {
                 calculatedBlock += calculatedBlock / 2;
