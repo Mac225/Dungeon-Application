@@ -5,6 +5,7 @@ using System;
 
 using DungeonLibary;
 using System.Linq.Expressions;
+using DungeonLibrary;
 
 
 namespace Dungeon_App
@@ -60,7 +61,8 @@ namespace Dungeon_App
                 Wasp wasp = new Wasp("BuzzKill", 25, 30, 70, 8, 1, 8, "Extra stingy");
                 Ferret ferret = new Ferret("Bear", 17, 25, 50, 10, 1, 4, "A large fat ferret", 3, 10);
                 Rat rat = new Rat("Sneaky", 10, 20, 65, 20, 1, 15, "The fattest rat.", true);
-                Monster[] monsters = { dog, wasp, ferret, rat };
+                Ant ant = new Ant("Small", 10, 20, 65, 19, 1, 15, "Small but strong.");
+                Monster[] monsters = { dog, wasp, ferret, rat, ant };
 
                 Random rand = new Random();
                 int randomNbr = rand.Next(monsters.Length);
