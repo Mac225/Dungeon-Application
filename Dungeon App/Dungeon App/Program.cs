@@ -41,18 +41,21 @@ namespace Dungeon_App
             Console.ReadLine();
             Console.Clear();
 
-
-
-            
-
-
-
            
          
+
+
+
+
+
 
             Player player = new Player(userName, 70, 5, 40, 40, Race.Human, Knife);
 
            
+
+
+
+
 
 
             bool exit = false;
@@ -137,24 +140,26 @@ namespace Dungeon_App
                             switch (answer3)
                             {
                                 case "knife":
-                                    
-                                  
-                                    new Player(userName, 70, 5, 40, 40, Race.Orc, Knife);
+
+                                    player.EquippedWeapon = Knife;
+
                                     break;
 
                                 case "staff":
+
+                                    player.EquippedWeapon = Staff;
                                     
-                                   
-                                    new Player(userName, 70, 5, 40, 40, Race.Orc, Staff);
+
                                     break;
                                 case "bat":
+                                    player.EquippedWeapon = Bat;
 
                                     
-                                    new Player(userName, 70, 5, 40, 40, Race.Orc, Bat);
+
                                     break;
                                 case "sword":
-                                   
-                                    new Player(userName, 70, 5, 40, 40, Race.Orc, Sword);
+                                    player.EquippedWeapon = Sword;
+
                                     break;
 
                                  default : Console.WriteLine("try agian");
@@ -170,19 +175,26 @@ namespace Dungeon_App
                             switch (answer2)
                             {
                                 case "orc":
-                                    
-                                    new Player(userName, 70, 5, 40, 40, Race.Orc, Sword);
+
+                                    player.CharacterRace = Race.Orc;
+
                                     break;
                                 case "human":
-                                    new Player(userName, 70, 5, 40, 40, Race.Human, Sword);
+
+                                    player.CharacterRace = Race.Human;
+
 
                                     break;
                                 case "elf":
-                                    new Player(userName, 70, 5, 40, 40, Race.Elf, Sword);
+
+                                    player.CharacterRace = Race.Elf;
+
 
                                     break;
                                 case "halfling":
-                                    new Player(userName, 70, 5, 40, 40, Race.Halfling, Sword);
+
+                                    player.CharacterRace = Race.Halfling;
+
                                     break;
                                  default : Console.WriteLine("try agian");
 
