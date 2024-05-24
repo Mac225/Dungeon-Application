@@ -40,15 +40,14 @@ namespace Dungeon_App
 
             Console.ReadLine();
             Console.Clear();
+             
 
 
 
-            
 
 
 
-           
-         
+
 
             Player player = new Player(userName, 70, 5, 40, 40, Race.Human, Knife);
 
@@ -137,8 +136,8 @@ namespace Dungeon_App
                             switch (answer3)
                             {
                                 case "knife":
+
                                     
-                                  
                                     new Player(userName, 70, 5, 40, 40, Race.Orc, Knife);
                                     break;
 
