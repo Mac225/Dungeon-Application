@@ -13,14 +13,13 @@ namespace DungeonLibary
             
         
 
-        //FIELDS
         private int _life;
         private string _name;
         private int _hitChance;
         private int _block;
         private int _maxLife;
 
-        //PROPERTIES
+    
         public string Name
         {
             get { return _name; }
@@ -59,7 +58,6 @@ namespace DungeonLibary
     
 
 
-    //CONSTRUCTORS
     public Character(string name, int hitChance, int block, int maxLife, int life)
         {
             Name = name;
@@ -69,7 +67,7 @@ namespace DungeonLibary
             Life = life;
         }
 
-        //METHODS
+      
         public override string ToString()
         {
             return string.Format("----- {0}--------\n" +
