@@ -41,21 +41,10 @@ namespace Dungeon_App
             Console.ReadLine();
             Console.Clear();
 
-           
-         
-
-
-
-
-
 
             Player player = new Player(userName, 70, 5, 40, 40, Race.Human, Knife);
 
            
-
-
-
-
 
 
             bool exit = false;
